@@ -1,6 +1,5 @@
 
-
-<Parallel Programming>
+《Parallel Programming》
 
 
 
