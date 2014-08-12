@@ -9,10 +9,11 @@ term_t term;
 
 Terminated()
 {
-    if(my_stack_size >= 2 && threads_in_cond_wait > 0 && new_stack == NULL)
+    if(my_stack_size >= 2 && threads_in_cond_wait > 0 && new_stack == NULL)    //first check
     {
         lock term_mutex;
-        if(threads_in_cond_wait > 0 && new_stack == NULL)
+        if(threads_in_cond_wait > 0 && new_stack == NULL)        //Check again
+        //Cause the locked condition may change between the first check and the time obtain lock
         {
             split my_stack creating new_stack;
             pthread_cond_signal(&term_cond_var);
