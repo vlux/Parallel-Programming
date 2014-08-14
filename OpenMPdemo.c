@@ -3,8 +3,8 @@
 #include <stdlib.h>
 int main()
 {
-    int i,n=9;
-    omp_set_num_threads(4);
+    int i,n=100;
+    omp_set_num_threads(6);
 #   pragma omp parallel default(none) shared(n) private(i)
     {
 #       pragma   omp for
