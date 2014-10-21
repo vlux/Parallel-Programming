@@ -1,4 +1,4 @@
-# pragma omp parallel num_threads(threads_count) \
+# pragma omp parallel num_threads(threads_count) 
         default(none) shared(a,n) private(i,tmp,phase)
     for(phase = 0; phase < n; phase++)
     {
